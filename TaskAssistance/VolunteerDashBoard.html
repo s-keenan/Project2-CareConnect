@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CareConnect – Volunteer Dashboard</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app">
+
+  <header class="app-header">
+    <div class="top-nav">
+      <span class="logo">CareConnect</span>
+      <a href="task-tracking.html">My Tasks</a>
+    </div>
+    <h1>Welcome, Mike</h1>
+  </header>
+
+  <main>
+    <div class="stat-strip">
+      <div class="stat-box">
+        <div class="num">12</div>
+        <div class="label">Completed</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">1</div>
+        <div class="label">Active</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">4.8</div>
+        <div class="label">Rating</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Available Requests</h2>
+
+    <div class="card">
+      <div class="card-row" style="align-items:flex-start;">
+        <div>
+          <p class="card-title">Grocery Shopping</p>
+          <p class="card-meta">Woodstock &middot; Today, 3:00 PM</p>
+        </div>
+        <span class="badge badge-high">High</span>
+      </div>
+      <button class="btn btn-accept" data-request="Grocery Shopping">Accept</button>
+    </div>
+
+    <div class="card">
+      <div class="card-row" style="align-items:flex-start;">
+        <div>
+          <p class="card-title">Medication Collection</p>
+          <p class="card-meta">Observatory &middot; Tomorrow, 10:00 AM</p>
+        </div>
+        <span class="badge badge-medium">Medium</span>
+      </div>
+      <button class="btn btn-accept" data-request="Medication Collection">Accept</button>
+    </div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="volunteer-dashboard.html" class="active">Home</a>
+    <a href="task-tracking.html">Tracking</a>
+    <a href="#">Messages</a>
+    <a href="#">Profile</a>
+  </nav>
+
+</div>
+
+<script>
+  // Demo-only handler: replace with the real CRUD "Update" call that
+  // assigns this request to the logged-in volunteer in the database.
+  document.querySelectorAll('.btn-accept').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const request = btn.dataset.request;
+      btn.textContent = 'Accepted';
+      btn.disabled = true;
+      btn.style.opacity = '0.6';
+      alert(`"${request}" accepted (demo only — connect this to the database update).`);
+    });
+  });
+</script>
+</body>
+</html>
