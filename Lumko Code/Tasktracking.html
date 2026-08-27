@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CareConnect – Task Tracking</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app">
+
+  <header class="app-header">
+    <div class="top-nav">
+      <span class="logo">CareConnect</span>
+      <a href="volunteer-dashboard.html" class="back">Dashboard</a>
+    </div>
+    <h1>Task Tracking</h1>
+  </header>
+
+  <main>
+    <div class="card">
+      <p class="card-title">Grocery Shopping</p>
+      <p class="card-meta">12 Min Rd, Woodstock</p>
+      <p class="card-meta">Contact available after accept</p>
+
+      <div class="stepper" id="stepper">
+        <div class="step complete"><div class="dot"></div><div class="step-label">Accepted</div></div>
+        <div class="step active"><div class="dot"></div><div class="step-label">In Progress</div></div>
+        <div class="step upcoming"><div class="dot"></div><div class="step-label">On the Way</div></div>
+        <div class="step upcoming"><div class="dot"></div><div class="step-label">Completed</div></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="statusUpdate">Update Status</label>
+      <select id="statusUpdate">
+        <option value="accepted">Accepted</option>
+        <option value="in-progress" selected>In Progress</option>
+        <option value="on-the-way">On the Way</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    <button class="btn btn-primary btn-block" id="updateStatusBtn">Update Status</button>
+
+    <div class="field" style="margin-top:18px;">
+      <label for="progressNotes">Progress Notes</label>
+      <textarea id="progressNotes" placeholder="Add a note about your progress..."></textarea>
+    </div>
+
+    <a href="#" class="link">Message Applicant</a>
+  </main>
+
+</div>
+
+<script>
+  // Status order used to drive which stepper dots show as complete/active/upcoming
+  const order = ['accepted', 'in-progress', 'on-the-way', 'completed'];
+  const steps = document.querySelectorAll('#stepper .step');
+  const select = document.getElementById('statusUpdate');
+
+  function renderStepper(status) {
+    const currentIndex = order.indexOf(status);
+    steps.forEach((step, i) => {
+      step.classList.remove('complete', 'active', 'upcoming');
+      if (i < currentIndex) step.classList.add('complete');
+      else if (i === currentIndex) step.classList.add('active');
+      else step.classList.add('upcoming');
+    });
+  }
+
+  // Demo-only handler: replace with the real CRUD "Update" call that
+  // writes the new status to the task's row in the database.
+  document.getElementById('updateStatusBtn').addEventListener('click', () => {
+    renderStepper(select.value);
+    alert('Status updated (demo only — connect this to the database update).');
+  });
+</script>
+</body>
+</html>
