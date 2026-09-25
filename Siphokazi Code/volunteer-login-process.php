@@ -1,5 +1,4 @@
 <?php
-// volunteer-login-process.php
 session_start();
 require "db_connect.php";
 
@@ -25,7 +24,6 @@ if ($result->num_rows === 0) {
 $user = $result->fetch_assoc();
 $stmt->close();
 
-// Confirm this account was registered as a volunteer, not an applicant
 if ($user['role'] !== 'Volunteer') {
     header("Location: volunteer_login.php?error=" . urlencode("This account is not registered as a volunteer."));
     exit;
@@ -36,25 +34,21 @@ if (!password_verify($password, $user['password_hash'])) {
     exit;
 }
 
-// Block accounts that haven't been approved yet
 if ($user['account_status'] !== 'Approved') {
     header("Location: volunteer_login.php?error=" . urlencode("Your account is still pending approval."));
     exit;
 }
 
-// --- Success: start session ---
 $_SESSION['userID'] = $user['userID'];
 $_SESSION['role']   = $user['role'];
 $_SESSION['email']  = $email;
 
-// Update last_login
 $stmt = $conn->prepare("UPDATE app_user SET last_login = NOW() WHERE userID = ?");
 $stmt->bind_param("i", $user['userID']);
 $stmt->execute();
 $stmt->close();
 $conn->close();
 
-// Redirect to the volunteer dashboard (create this page separately)
 header("Location: volunteer_dashboard.php");
 exit;
 ?>

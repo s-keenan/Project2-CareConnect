@@ -1,19 +1,16 @@
 <?php
-// volunteer-register-process.php
 require "db_connect.php";
 
-// --- Collect and sanitize form input ---
 $full_name       = trim($_POST['full_name'] ?? '');
 $id_number       = trim($_POST['id_number'] ?? '');
 $email           = trim($_POST['email'] ?? '');
 $phone           = trim($_POST['phone'] ?? '');
-$address         = trim($_POST['address'] ?? ''); // not stored - no address column on volunteer table
+$address         = trim($_POST['address'] ?? '');
 $availability    = trim($_POST['availability'] ?? '');
 $preferred_time  = trim($_POST['preferred_time'] ?? '');
 $password        = $_POST['password'] ?? '';
 $confirm_password = $_POST['confirm_password'] ?? '';
 
-// --- Basic validation ---
 if ($full_name === '' || $id_number === '' || $email === '' || $phone === '' ||
     $address === '' || $availability === '' || $preferred_time === '' || $password === '') {
     header("Location: volunteer_register.php?error=" . urlencode("Please fill in all required fields."));
@@ -30,10 +27,8 @@ if (strlen($password) < 8) {
     exit;
 }
 
-// Combine the two dropdowns into the single availability_schedule column
 $availability_schedule = $availability . " - " . $preferred_time;
 
-// --- Check if email already exists ---
 $stmt = $conn->prepare("SELECT userID FROM app_user WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
@@ -46,12 +41,8 @@ if ($stmt->num_rows > 0) {
 }
 $stmt->close();
 
-// --- Hash the password ---
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-// --- Insert into app_user first ---
-// NOTE: confirm the 'role' and 'account_status' enum values match your table
-// (Structure tab in phpMyAdmin for app_user). Adjust the strings below if needed.
 $role = "Volunteer";
 $account_status = "Pending";
 
@@ -67,7 +58,6 @@ if (!$stmt->execute()) {
 $userID = $stmt->insert_id;
 $stmt->close();
 
-// --- Insert into volunteer, linked by userID ---
 $tasks_completed_count = 0;
 
 $stmt = $conn->prepare("INSERT INTO volunteer (userID, full_name, id_number, contact_number, availability_schedule, tasks_completed_count) VALUES (?, ?, ?, ?, ?, ?)");
@@ -83,7 +73,6 @@ $stmt->bind_param(
 
 if (!$stmt->execute()) {
     $stmt->close();
-    // Roll back the app_user row if the volunteer insert fails, to avoid orphaned accounts
     $conn->query("DELETE FROM app_user WHERE userID = " . intval($userID));
     header("Location: volunteer_register.php?error=" . urlencode("Could not save volunteer details. Please try again."));
     exit;
@@ -92,7 +81,6 @@ if (!$stmt->execute()) {
 $stmt->close();
 $conn->close();
 
-// --- Success: send them to login ---
 header("Location: volunteer_login.php?registered=1");
 exit;
 ?>

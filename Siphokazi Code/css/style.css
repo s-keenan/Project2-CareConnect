@@ -82,14 +82,14 @@ nav a:hover {
 }
 
 .primary {
-    background-color: #2c7a7b;
+    background-color: #17796A;
     color: white;
 }
 
 .secondary {
     background-color: white;
-    color: #2c7a7b;
-    border: 2px solid #2c7a7b;
+    color: #17796A;
+    border: 2px solid #17796A;
 }
 
 /* Hero info card */
@@ -113,7 +113,7 @@ nav a:hover {
 }
 
 .feature span {
-    background-color: #2c7a7b;
+    background-color: #17796A;
     color: white;
     width: 35px;
     height: 35px;
@@ -231,13 +231,13 @@ footer {
 
 .form-group input:focus {
     outline: none;
-    border-color: #2c7a7b;
+    border-color: #17796A;
 }
 
 .login-button {
     width: 100%;
     padding: 14px;
-    background-color: #2c7a7b;
+    background-color: #17796A;
     color: white;
     border: none;
     border-radius: 6px;
@@ -256,7 +256,7 @@ footer {
 }
 
 .register-text a {
-    color: #2c7a7b;
+    color: #17796A;
     font-weight: bold;
     text-decoration: none;
 }
@@ -286,7 +286,7 @@ footer {
 }
 
 .account-option:hover {
-    border-color: #2c7a7b;
+    border-color: #17796A;
     transform: translateY(-3px);
 }
 
@@ -296,7 +296,7 @@ footer {
 }
 
 .account-option h2 {
-    color: #2c7a7b;
+    color: #17796A;
     margin-bottom: 10px;
 }
 
@@ -315,7 +315,7 @@ footer {
     font-size: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
-    color: #2c7a7b;
+    color: #17796A;
     border-bottom: 1px solid #ddd;
     padding-bottom: 8px;
 }
@@ -331,5 +331,5 @@ footer {
 
 .form-group select:focus {
     outline: none;
-    border-color: #2c7a7b;
+    border-color: #17796A;
 }

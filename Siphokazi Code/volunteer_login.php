@@ -31,7 +31,7 @@
         </p>
 
         <?php if (isset($_GET['registered'])): ?>
-            <p style="color: #2c7a7b; text-align: center; margin-bottom: 15px;">
+            <p style="color: #17796A; text-align: center; margin-bottom: 15px;">
                 Account created successfully. Please log in.
             </p>
         <?php endif; ?>
