@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>CareConnect - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-left">
+            <span class="logo-icon"></span>
+            <h1>Care<span>Connect</span></h1>
+        </div>
+
+        <div class="nav-center" id="navCenter">
+            <a href="#" class="active">📊 Dashboard</a>
+            <a href="Messaging_screen.html">💬 Messages</a>
+            <a href="#">👥 Users</a>
+            <a href="#">📝 Requests</a>
+            <a href="#">📈 Reports</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="bell">
+                🔔
+                <span class="badge">3</span>
+            </div>
+            <div class="profile">
+                <div class="avatar"></div>
+                <span class="name"></span>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+
+        <div class="page-header">
+            <h2>👋 Welcome back</h2>
+            <p>Here's what's happening with your platform today</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon blue">👤</div>
+                    <span class="stat-change up">↑ 12%</span>
+                </div>
+                <div class="stat-number">45</div>
+                <div class="stat-label">Total Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon green">🟢</div>
+                    <span class="stat-change up">↑ 8%</span>
+                </div>
+                <div class="stat-number">32</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon orange">🔴</div>
+                    <span class="stat-change down">↓ 3%</span>
+                </div>
+                <div class="stat-number">13</div>
+                <div class="stat-label">Inactive Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon purple">📋</div>
+                    <span class="stat-change up">↑ 5</span>
+                </div>
+                <div class="stat-number">12</div>
+                <div class="stat-label">Pending Approvals</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+
+            <div class="pending-section">
+                <div class="section-header">
+                    <h3>📋 Pending Approvals</h3>
+                    <a href="#">View All →</a>
+                </div>
+
+                <div class="approval-item">
+                    <div class="approval-info">
+                        <div class="approval-avatar">JS</div>
+                        <div class="approval-details">
+                            <h4>John Smith</h4>
+                            <p>📞 123-456-7890</p>
+                            <span class="status">Pending</span>
+                        </div>
+                    </div>
+                    <div class="approval-actions">
+                        <button class="btn-approve">✅ Approve</button>
+                        <button class="btn-reject">❌ Reject</button>
+                    </div>
+                </div>
+
+                <div class="approval-item">
+                    <div class="approval-info">
+                        <div class="approval-avatar">JD</div>
+                        <div class="approval-details">
+                            <h4>Jane Doe</h4>
+                            <p>📞 098-765-4321</p>
+                            <span class="status">Pending</span>
+                        </div>
+                    </div>
+                    <div class="approval-actions">
+                        <button class="btn-approve">✅ Approve</button>
+                        <button class="btn-reject">❌ Reject</button>
+                    </div>
+                </div>
+
+                <div class="approval-item">
+                    <div class="approval-info">
+                        <div class="approval-avatar">MJ</div>
+                        <div class="approval-details">
+                            <h4>Mike Johnson</h4>
+                            <p>📞 555-123-4567</p>
+                            <span class="status">Pending</span>
+                        </div>
+                    </div>
+                    <div class="approval-actions">
+                        <button class="btn-approve">✅ Approve</button>
+                        <button class="btn-reject">❌ Reject</button>
+                    </div>
+                </div>
+
+                <div class="approval-item">
+                    <div class="approval-info">
+                        <div class="approval-avatar">SW</div>
+                        <div class="approval-details">
+                            <h4>Sarah Williams</h4>
+                            <p>📞 444-987-6543</p>
+                            <span class="status">Pending</span>
+                        </div>
+                    </div>
+                    <div class="approval-actions">
+                        <button class="btn-approve">✅ Approve</button>
+                        <button class="btn-reject">❌ Reject</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-sidebar">
+
+                <div class="quick-stats">
+                    <h3>📊 Quick Stats</h3>
+                    <div class="quick-stat-item">
+                        <span class="label">Total Requests</span>
+                        <span class="value">156</span>
+                    </div>
+                    <div class="quick-stat-item">
+                        <span class="label">Active Requests</span>
+                        <span class="value">23</span>
+                    </div>
+                    <div class="quick-stat-item">
+                        <span class="label">Completed Tasks</span>
+                        <span class="value">89</span>
+                    </div>
+                    <div class="quick-stat-item">
+                        <span class="label">Pending Tasks</span>
+                        <span class="value">12</span>
+                    </div>
+                    <div class="quick-stat-item">
+                        <span class="label">Total Volunteers</span>
+                        <span class="value">18</span>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>🕐 Recent Activity</h3>
+                    <div class="activity-item">
+                        <div class="activity-icon blue-bg">✅</div>
+                        <div class="activity-text"><strong>John Smith</strong> was approved</div>
+                        <span class="activity-time">2 min ago</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon green-bg">📝</div>
+                        <div class="activity-text">New request from <strong>Jane Doe</strong></div>
+                        <span class="activity-time">1 hour ago</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon orange-bg">💬</div>
+                        <div class="activity-text"><strong>Mike Johnson</strong> sent a message</div>
+                        <span class="activity-time">3 hours ago</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon purple-bg">📊</div>
+                        <div class="activity-text">Monthly report generated</div>
+                        <span class="activity-time">Yesterday</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navCenter').classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('navCenter');
+            const hamburger = document.querySelector('.hamburger');
+            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+        document.querySelectorAll('.btn-approve').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const name = this.closest('.approval-item').querySelector('h4').textContent;
+                if (confirm(`Approve ${name}?`)) {
+                    this.textContent = '✅ Approved';
+                    this.style.background = '#1e7e34';
+                    this.disabled = true;
+                    const rejectBtn = this.closest('.approval-actions').querySelector('.btn-reject');
+                    rejectBtn.style.display = 'none';
+                    const status = this.closest('.approval-item').querySelector('.status');
+                    status.textContent = 'Approved';
+                    status.style.background = '#e6f4ea';
+                    status.style.color = '#1e7e34';
+                }
+            });
+        });
+
+        document.querySelectorAll('.btn-reject').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const name = this.closest('.approval-item').querySelector('h4').textContent;
+                if (confirm(`Reject ${name}?`)) {
+                    this.textContent = '❌ Rejected';
+                    this.style.background = '#d33426';
+                    this.disabled = true;
+                    const approveBtn = this.closest('.approval-actions').querySelector('.btn-approve');
+                    approveBtn.style.display = 'none';
+                    const status = this.closest('.approval-item').querySelector('.status');
+                    status.textContent = 'Rejected';
+                    status.style.background = '#fce8e6';
+                    status.style.color = '#d93025';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

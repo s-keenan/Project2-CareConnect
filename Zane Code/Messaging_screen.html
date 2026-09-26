@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>CareConnect - Messaging</title>
+    <link rel="stylesheet" href="styles.css" >
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-left">
+            <span class="logo-icon"></span>
+            <h1>Care<span>Connect</span></h1>
+        </div>
+
+        <div class="nav-center" id="navCenter">
+            <a href="admin_dashboard.html">📊 Dashboard</a>
+            <a href="#" class="active">💬 Messages</a>
+            <a href="#">👥 Users</a>
+            <a href="#">📝 Requests</a>
+            <a href="#">📈 Reports</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="bell">
+                🔔
+                <span class="badge">3</span>
+            </div>
+            <div class="profile">
+                <div class="avatar">ZV</div>
+                <span class="name">Zane V.</span>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="main-content">
+
+
+        <div class="page-header">
+            <h2>Messaging</h2>
+            <p>Communicate with applicants and volunteers</p>
+        </div>
+
+        <div class="messaging-container">
+
+            <div class="threads-sidebar">
+                <div class="threads-header">
+                    <h3>Conversations</h3>
+                    <input type="text" class="thread-search" placeholder="🔍 Search conversations...">
+                </div>
+
+                <div class="threads-list">
+                    <div class="thread-item active" onclick="selectThread(this)">
+                        <div class="thread-avatar bg-blue">JS</div>
+                        <div class="thread-info">
+                            <div class="thread-name">John Smith</div>
+                            <div class="thread-preview">Thanks for your help with the...</div>
+                        </div>
+                        <div class="thread-meta">
+                            <span class="thread-time">2 min ago</span>
+                            <span class="thread-unread">3</span>
+                        </div>
+                    </div>
+
+                    <div class="thread-item" onclick="selectThread(this)">
+                        <div class="thread-avatar bg-green">JD</div>
+                        <div class="thread-info">
+                            <div class="thread-name">Jane Doe</div>
+                            <div class="thread-preview">When will my request be...</div>
+                        </div>
+                        <div class="thread-meta">
+                            <span class="thread-time">1 hour ago</span>
+                        </div>
+                    </div>
+
+                    <div class="thread-item" onclick="selectThread(this)">
+                        <div class="thread-avatar bg-orange">MJ</div>
+                        <div class="thread-info">
+                            <div class="thread-name">Mike Johnson</div>
+                            <div class="thread-preview">I've completed the task...</div>
+                        </div>
+                        <div class="thread-meta">
+                            <span class="thread-time">3 hours ago</span>
+                            <span class="thread-unread">1</span>
+                        </div>
+                    </div>
+
+                    <div class="thread-item" onclick="selectThread(this)">
+                        <div class="thread-avatar bg-purple">SW</div>
+                        <div class="thread-info">
+                            <div class="thread-name">Sarah Williams</div>
+                            <div class="thread-preview">Could you please review my...</div>
+                        </div>
+                        <div class="thread-meta">
+                            <span class="thread-time">Yesterday</span>
+                        </div>
+                    </div>
+
+                    <div class="thread-item" onclick="selectThread(this)">
+                        <div class="thread-avatar bg-red">LV</div>
+                        <div class="thread-info">
+                            <div class="thread-name">Lumko Vava</div>
+                            <div class="thread-preview">Need assistance with medication...</div>
+                        </div>
+                        <div class="thread-meta">
+                            <span class="thread-time">Yesterday</span>
+                        </div>
+                    </div>
+
+                    <div class="thread-item" onclick="selectThread(this)">
+                        <div class="thread-avatar bg-teal">SS</div>
+                        <div class="thread-info">
+                            <div class="thread-name">Sanele Sontsi</div>
+                            <div class="thread-preview">I'm available to help today...</div>
+                        </div>
+                        <div class="thread-meta">
+                            <span class="thread-time">2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="chat-area">
+                <div class="chat-header">
+                    <div class="chat-avatar bg-blue">JS</div>
+                    <div class="chat-info">
+                        <div class="chat-name">John Smith</div>
+                        <div class="chat-status">🟢 Online</div>
+                    </div>
+                    <span class="chat-request">Request #R-2024-001</span>
+                </div>
+
+                <div class="chat-messages">
+                    <div class="message-date"><span>Today</span></div>
+
+                    <div class="message-bubble received">
+                        Hello, I need help with grocery shopping this week.
+                        <span class="msg-time">10:30 AM</span>
+                    </div>
+
+                    <div class="message-bubble sent">
+                        Hi John, I can assist you with that. What items do you need?
+                        <span class="msg-time">10:32 AM</span>
+                    </div>
+
+                    <div class="message-bubble received">
+                        Thanks! I'll send you the list shortly. I really appreciate your help.
+                        <span class="msg-time">10:35 AM</span>
+                    </div>
+
+                    <div class="message-bubble sent">
+                        You're welcome! I'll head to the store as soon as I get the list.
+                        <span class="msg-time">10:36 AM</span>
+                    </div>
+
+                    <div class="message-bubble received">
+                        Perfect, I'll message you the details. Thanks again!
+                        <span class="msg-time">10:38 AM</span>
+                    </div>
+
+                    <div class="message-bubble sent">
+                        Great! I'll keep you updated on the progress.
+                        <span class="msg-time">10:40 AM</span>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button class="btn-send">Send ➤</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navCenter').classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('navCenter');
+            const hamburger = document.querySelector('.hamburger');
+            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        function selectThread(element) {
+            document.querySelectorAll('.thread-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        document.querySelector('.chat-input input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        document.querySelector('.btn-send').addEventListener('click', sendMessage);
+
+        function sendMessage() {
+            const input = document.querySelector('.chat-input input');
+            const message = input.value.trim();
+            if (message) {
+                const messagesContainer = document.querySelector('.chat-messages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message-bubble sent';
+                const now = new Date();
+                const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                messageDiv.innerHTML = `${message}<span class="msg-time">${time}</span>`;
+                messagesContainer.appendChild(messageDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                input.value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
