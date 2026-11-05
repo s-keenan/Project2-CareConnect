@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | Request Tracking</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/applicant.js" defer></script>
+</head>
+<body data-applicant-page="tracking">
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <main class="page-wrap">
+    <p class="page-message" data-applicant-message role="status" aria-live="polite"></p>
+    <section id="tracking-content" class="form-panel" hidden>
+      <p class="eyebrow">Request status</p>
+      <div class="card-row">
+        <h1 id="tracking-title">Assistance Request</h1>
+        <span class="badge" id="tracking-status"></span>
+      </div>
+      <ol class="stepper" aria-label="Request progress">
+        <li class="step" data-step-status="Pending"><span class="dot" aria-hidden="true"></span><span class="step-label">Pending</span></li>
+        <li class="step" data-step-status="Accepted"><span class="dot" aria-hidden="true"></span><span class="step-label">Accepted</span></li>
+        <li class="step" data-step-status="In Progress"><span class="dot" aria-hidden="true"></span><span class="step-label">In Progress</span></li>
+        <li class="step" data-step-status="On the Way"><span class="dot" aria-hidden="true"></span><span class="step-label">On the Way</span></li>
+        <li class="step" data-step-status="Completed"><span class="dot" aria-hidden="true"></span><span class="step-label">Completed</span></li>
+      </ol>
+      <dl class="request-details" id="tracking-details"></dl>
+    </section>
+    <p class="form-hint"><a href="applicant_dashboard.html">Back to My Requests</a></p>
+  </main>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | Applicant Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/forms.js" defer></script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <main class="page-wrap form-page form-page-wide">
+    <section class="form-panel">
+      <h1>Applicant Registration</h1>
+      <p class="form-intro">Create your CareConnect account to request assistance.</p>
+      <form data-register-role="Applicant" novalidate>
+        <h2 class="form-section-title">Personal Information</h2>
+        <div class="form-field"><label for="full_name">Full Name</label><input id="full_name" name="full_name" type="text" required></div>
+        <div class="form-field"><label for="id_number">ID Number</label><input id="id_number" name="id_number" type="text" required></div>
+        <div class="form-field"><label for="email">Email Address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" required></div>
+        <div class="form-field"><label for="address">Address</label><input id="address" name="address" type="text" required></div>
+        <div class="form-field"><label for="medical_details">Medical Details</label><textarea id="medical_details" name="medical_details" placeholder="Any relevant medical details (optional)"></textarea></div>
+
+        <h2 class="form-section-title">Emergency Contact / Next of Kin</h2>
+        <div class="form-field"><label for="next_of_kin">Full Name</label><input id="next_of_kin" name="next_of_kin" type="text" required></div>
+        <div class="form-field"><label for="kin_relationship">Relationship</label><input id="kin_relationship" name="kin_relationship" type="text" placeholder="e.g. Daughter, Son, Sister" required></div>
+        <div class="form-field"><label for="kin_phone">Contact Number</label><input id="kin_phone" name="kin_phone" type="tel" required></div>
+
+        <h2 class="form-section-title">Account Security</h2>
+        <div class="form-field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" required></div>
+        <div class="form-field"><label for="confirm_password">Confirm Password</label><input id="confirm_password" name="confirm_password" type="password" autocomplete="new-password" required></div>
+        <p class="form-message" data-form-message role="status" aria-live="polite"></p>
+        <button class="button button-full" type="submit">Create Applicant Account</button>
+      </form>
+      <p class="form-hint">Already have an account? <a href="applicant_login.html">Login here</a></p>
+    </section>
+  </main>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

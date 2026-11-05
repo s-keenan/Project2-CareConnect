@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | User Directory</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body data-admin-page="users">
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <main class="main-content">
+    <header class="page-header">
+      <h2>Users</h2>
+      <p>Account directory · <span id="users-total">Loading...</span></p>
+    </header>
+    <section class="table-wrap" aria-label="User directory">
+      <table class="data-table">
+        <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Contact Number</th><th>Account Status</th><th>Created</th></tr></thead>
+        <tbody id="users-table-body"></tbody>
+      </table>
+    </section>
+  </main>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

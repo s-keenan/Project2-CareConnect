@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | Applicant Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/forms.js" defer></script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <main class="page-wrap form-page">
+    <section class="form-panel">
+      <h1>Applicant Login</h1>
+      <p class="form-intro">Login to manage your assistance requests.</p>
+      <form data-login-role="Applicant" novalidate>
+        <div class="form-field"><label for="email">Email Address</label><input id="email" name="email" type="email" autocomplete="username" required></div>
+        <div class="form-field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+        <p class="form-message" data-form-message role="status" aria-live="polite"></p>
+        <button class="button button-full" type="submit">Login</button>
+      </form>
+      <p class="form-hint"><a href="#">Forgot your password?</a></p>
+      <p class="form-hint"><a href="applicant_register.html">Create an account</a></p>
+      <p class="form-hint"><a href="login.html">Choose another account type</a></p>
+    </section>
+  </main>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

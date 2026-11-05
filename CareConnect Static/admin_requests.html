@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | Assistance Requests</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body data-admin-page="requests">
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <main class="main-content">
+    <header class="page-header">
+      <h2>Requests</h2>
+      <p>Read-only assistance request list · <span id="requests-total">Loading...</span></p>
+    </header>
+    <section class="table-wrap" aria-label="Assistance requests">
+      <table class="data-table">
+        <thead><tr><th>Request ID</th><th>Applicant</th><th>Request Type</th><th>Preferred Date and Time</th><th>Priority</th><th>Status</th><th>Description</th></tr></thead>
+        <tbody id="requests-table-body"></tbody>
+      </table>
+    </section>
+  </main>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

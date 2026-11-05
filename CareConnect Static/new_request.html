@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | New Assistance Request</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/applicant.js" defer></script>
+</head>
+<body data-applicant-page="request">
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <main class="page-wrap form-page form-page-wide">
+    <section class="form-panel">
+      <h1>New Assistance Request</h1>
+      <p class="form-intro">Tell us what kind of assistance you need.</p>
+      <p class="page-message" data-applicant-message role="status" aria-live="polite"></p>
+      <form id="request-form" novalidate>
+        <div class="form-field">
+          <label for="requestType">Request Type <span class="req">*</span></label>
+          <select id="requestType" name="requestType" required>
+            <option value="">Select a request type</option>
+            <option value="Grocery Shopping">Grocery Shopping</option>
+            <option value="Medication Collection">Medication Collection</option>
+            <option value="Transport/Appointment">Doctor Appointment</option>
+            <option value="Transport/Appointment">Transport</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="form-field"><label for="requestDate">Date <span class="req">*</span></label><input id="requestDate" name="requestDate" type="date" required></div>
+          <div class="form-field"><label for="requestTime">Time <span class="req">*</span></label><input id="requestTime" name="requestTime" type="time" required></div>
+        </div>
+        <div class="form-field"><label for="taskDescription">Task Description <span class="req">*</span></label><textarea id="taskDescription" name="taskDescription" placeholder="Describe what you need help with..." required></textarea></div>
+        <div class="form-field"><label for="specialInstructions">Special Instructions</label><textarea id="specialInstructions" name="specialInstructions" placeholder="Any specific needs? (optional)"></textarea></div>
+        <fieldset class="form-field priority-field">
+          <legend class="priority-legend">Priority</legend>
+          <div class="priority-options">
+            <label class="priority-choice"><input type="radio" name="priority" value="Low"> Low</label>
+            <label class="priority-choice"><input type="radio" name="priority" value="Medium" checked required> Medium</label>
+            <label class="priority-choice"><input type="radio" name="priority" value="High"> High</label>
+          </div>
+        </fieldset>
+        <button type="submit" class="button button-full">Submit Request</button>
+      </form>
+      <a id="view-requests-link" class="button button-secondary button-full" href="applicant_dashboard.html" hidden>View My Requests</a>
+      <p class="form-hint"><a href="applicant_dashboard.html">Cancel</a></p>
+    </section>
+  </main>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

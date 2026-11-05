@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | Applicant Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/applicant.js" defer></script>
+</head>
+<body data-applicant-page="dashboard">
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <div class="app">
+    <header class="app-header">
+      <h1>Welcome, <span id="applicant-name">Applicant</span></h1>
+      <p class="subtitle">Here's what's happening with your requests</p>
+    </header>
+    <main>
+      <p class="page-message" data-applicant-message role="status" aria-live="polite"></p>
+      <a href="new_request.html" class="button">+ Request Assistance</a>
+      <h2 class="section-title">My Requests</h2>
+      <div class="request-list" id="request-list"></div>
+    </main>
+  </div>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>
