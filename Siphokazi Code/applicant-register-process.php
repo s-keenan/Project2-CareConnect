@@ -61,7 +61,7 @@ $stmt->close();
 
 $stmt = $conn->prepare("INSERT INTO applicant (userID, full_name, id_number, contact_number, residential_address, medical_details, next_of_kin_name, next_of_kin_contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param(
-    "issssss",
+    "isssssss",
     $userID,
     $full_name,
     $id_number,
