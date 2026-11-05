@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | Choose Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/reset.js" defer></script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+
+  <main class="page-wrap form-page">
+    <section class="form-panel">
+      <h1>Welcome Back</h1>
+      <p class="form-intro">Choose your account type to continue.</p>
+      <div class="choice-grid">
+        <a class="choice-link" href="applicant_login.html"><h2>Applicant</h2><p>I am an applicant looking for assistance.</p></a>
+        <a class="choice-link" href="volunteer_login.html"><h2>Volunteer</h2><p>I am a volunteer ready to help.</p></a>
+        <a class="choice-link" href="admin_login.html"><h2>Admin</h2><p>I manage CareConnect accounts and requests.</p></a>
+      </div>
+      <p class="form-hint">Don't have an account? <a href="register.html">Create an account</a></p>
+      <h2 class="form-section-title">Demo Accounts</h2>
+      <div class="table-wrap demo-accounts-wrap">
+        <table class="data-table demo-accounts-table">
+          <thead><tr><th>Role</th><th>Email</th><th>Password</th></tr></thead>
+          <tbody>
+            <tr><td>Applicant</td><td>applicant@careconnect.test</td><td>CareConnect123!</td></tr>
+            <tr><td>Volunteer</td><td>volunteer@careconnect.test</td><td>CareConnect123!</td></tr>
+            <tr><td>Admin</td><td>admin@careconnect.test</td><td>CareConnect123!</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="login-tools">
+        <a id="reset-demo-data" href="#reset-demo-data">Reset demo data</a>
+        <p id="reset-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

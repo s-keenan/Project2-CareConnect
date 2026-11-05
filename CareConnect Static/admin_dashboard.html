@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body data-admin-page="dashboard">
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <main class="main-content">
+    <header class="page-header">
+      <h2>Welcome back</h2>
+      <p>Here's what's happening with your platform today</p>
+    </header>
+    <p class="page-message" data-admin-message role="status" aria-live="polite"></p>
+
+    <section class="stats-grid" aria-label="Platform account statistics">
+      <article class="stat-card"><div class="stat-top"><span class="stat-icon">Users</span></div><div class="stat-number" id="total-users">0</div><div class="stat-label">Total Users</div></article>
+      <article class="stat-card"><div class="stat-top"><span class="stat-icon">Approved</span></div><div class="stat-number" id="active-users">0</div><div class="stat-label">Active Users</div></article>
+      <article class="stat-card"><div class="stat-top"><span class="stat-icon">Pending / Rejected</span></div><div class="stat-number" id="inactive-users">0</div><div class="stat-label">Inactive Users</div></article>
+      <article class="stat-card"><div class="stat-top"><span class="stat-icon">Approvals</span></div><div class="stat-number" id="pending-approvals">0</div><div class="stat-label">Pending Approvals</div></article>
+    </section>
+
+    <div class="dashboard-grid">
+      <section class="pending-section" aria-labelledby="approvals-heading">
+        <div class="section-header">
+          <h3 id="approvals-heading">Pending Approvals</h3>
+          <a href="admin_users.html">View All Users</a>
+        </div>
+        <div id="approval-list"></div>
+      </section>
+
+      <aside class="right-sidebar">
+        <section class="quick-stats" aria-labelledby="quick-stats-heading">
+          <h3 id="quick-stats-heading">Quick Stats</h3>
+          <div class="quick-stat-item"><span class="label">Total Requests</span><span class="value" id="total-requests">0</span></div>
+          <div class="quick-stat-item"><span class="label">Active Requests</span><span class="value" id="active-requests">0</span></div>
+          <div class="quick-stat-item"><span class="label">Completed Tasks</span><span class="value" id="completed-tasks">0</span></div>
+          <div class="quick-stat-item"><span class="label">Pending Tasks</span><span class="value" id="pending-tasks">0</span></div>
+          <div class="quick-stat-item"><span class="label">Total Volunteers</span><span class="value" id="total-volunteers">0</span></div>
+          <p class="demo-details" id="directory-count"></p>
+        </section>
+        <section class="recent-activity" aria-labelledby="activity-heading">
+          <h3 id="activity-heading">Recent Activity</h3>
+          <div id="recent-activity-list"></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

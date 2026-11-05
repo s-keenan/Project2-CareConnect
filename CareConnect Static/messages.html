@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect | Messages</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/messages.js" defer></script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+  <main class="page-wrap">
+    <p class="eyebrow">CareConnect conversations</p>
+    <h1>Messages</h1>
+    <section class="message-workspace" aria-label="Request messages">
+      <div class="message-controls">
+        <div class="form-field">
+          <label for="request-select">Choose a Request</label>
+          <select id="request-select"></select>
+        </div>
+        <div class="form-field">
+          <label for="recipient-select">Send To</label>
+          <select id="recipient-select" required></select>
+        </div>
+      </div>
+      <header class="message-request-summary">
+        <h2 id="request-title">Choose a request</h2>
+        <p id="request-meta"></p>
+      </header>
+      <div id="messages-list" class="chat-messages message-feed" role="log" aria-live="polite" aria-relevant="additions text"></div>
+      <form id="message-form" class="message-compose">
+        <div class="form-field">
+          <label for="message-content">Message</label>
+          <textarea id="message-content" name="message_content" placeholder="Type a message..." required></textarea>
+        </div>
+        <button class="button" type="submit">Send</button>
+      </form>
+      <p class="message-status" id="message-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17796A">
+  <title>CareConnect | Connecting Communities</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", async () => {
+      await window.CCStore.ready;
+      const status = document.getElementById("store-status");
+      status.textContent = window.CCStore.collections.map(name => name + ": " + window.CCStore.read(name).length).join(" | ");
+    });
+  </script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CareConnect community support</p>
+        <h1>Connecting communities. Making a difference.</h1>
+        <p class="hero-copy">CareConnect brings people who need assistance together with volunteers ready to help in their community.</p>
+        <div class="button-row">
+          <a class="button" href="register.html">Get Started</a>
+          <a class="button button-secondary" href="login.html">Log In</a>
+          <a class="button button-secondary" href="#about">About CareConnect</a>
+        </div>
+      </div>
+
+      <aside class="info-panel" aria-labelledby="how-title">
+        <h2 id="how-title">How CareConnect Works</h2>
+        <div class="how-step">
+          <span class="step-number">1</span>
+          <div><h3>Request Help</h3><p>Community members can request assistance.</p></div>
+        </div>
+        <div class="how-step">
+          <span class="step-number">2</span>
+          <div><h3>Find a Volunteer</h3><p>Volunteers can respond to requests.</p></div>
+        </div>
+        <div class="how-step">
+          <span class="step-number">3</span>
+          <div><h3>Make a Difference</h3><p>People connect and support one another.</p></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="foundation-panel" id="role-view" aria-live="polite">
+      <h2>Foundation status</h2>
+      <p data-role-summary>No active session.</p>
+      <p class="demo-details" id="store-status">Preparing browser storage...</p>
+      <p class="demo-details"><strong>Demo password:</strong> CareConnect123! &nbsp; <strong>Admin:</strong> admin@careconnect.test &nbsp; <strong>Applicant:</strong> applicant@careconnect.test &nbsp; <strong>Volunteer:</strong> volunteer@careconnect.test</p>
+      <p class="demo-details">Demo accounts are for local testing only. Browser storage is not secure authentication.</p>
+    </section>
+
+    <section class="section-band" id="about">
+      <h2>About CareConnect</h2>
+      <p>CareConnect is a community assistance platform that connects people who need help with volunteers who are willing to assist. Our goal is to make it easier for community members to request assistance and for volunteers to find meaningful opportunities to help others.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 CareConnect. All rights reserved.</footer>
+</body>
+</html>
